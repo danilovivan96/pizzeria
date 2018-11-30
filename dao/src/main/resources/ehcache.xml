@@ -1,0 +1,8 @@
+<ehcache>
+    <cache name="ru.mail.danilov.pizzeria.dao.model.Item"
+           maxElementsInMemory="10"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="0"
+           eternal="false"
+           overflowToDisk="false"/>
+</ehcache>

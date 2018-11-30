@@ -1,0 +1,18 @@
+<?xml version ="1.0" ?>
+<ItemList xmlns="https://mail.ru/danilov_ivan_1996/items">
+    <Item id="030801">
+        <name>Margarita</name>
+        <description>Classic 'Margarita' by the best traditions</description>
+        <price>10.40</price>
+    </Item>
+    <Item id="030802">
+        <name>FourCheeses</name>
+        <description>Four cheeses: Cheddar, Parmesan, Romano and Mozzarella</description>
+        <price>12.50</price>
+    </Item>
+    <Item id="030803">
+        <name>Pizza with sea Products</name>
+        <description>Delicious pizza with prawns, mussels and squids</description>
+        <price>15.00</price>
+    </Item>
+</ItemList>

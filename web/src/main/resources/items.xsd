@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://mail.ru/danilov_ivan_1996/items"
+           xmlns="https://mail.ru/danilov_ivan_1996/items"
+           elementFormDefault="qualified">
+    <xs:element name="ItemList" type="root"/>
+    <xs:complexType name="root">
+        <xs:sequence>
+            <xs:element name="Item" type="ItemType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ItemType">
+        <xs:sequence>
+            <xs:element name="name"/>
+            <xs:element name="description"/>
+            <xs:element name="price" type="xs:float"/>
+        </xs:sequence>
+        <xs:attribute name="id"/>
+    </xs:complexType>
+</xs:schema>
