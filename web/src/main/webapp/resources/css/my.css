@@ -1,0 +1,28 @@
+body {
+    background-color: #eae3cb;
+    font-family: "/resources/font/LugaAd Bold.ttf", cursive;
+}
+
+.btn {
+    background-color: #fde07f;
+    border-color: #db7f00;
+    border-width: medium;
+    font-family: "/resources/font/LugaAd Bold.ttf", cursive;
+    font-weight: bold;
+    color: black;
+}
+label{
+    padding-left: 5%;
+}
+h4{
+    font-style: italic;
+}
+label{
+    font-size: larger;
+}
+.form-control{
+    border-radius: 15px;
+    border-color: #db7f00;
+
+    padding: 8% ;
+}
