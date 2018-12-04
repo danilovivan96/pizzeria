@@ -8,8 +8,14 @@
     <title>Users</title>
 </head>
 <body>
-<h1 class="shadow-lg p-3 mb-5 bg-grey rounded bg-dark text-white" align="center">Users</h1>
 <div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <img src="${pageContext.request.contextPath}/resources/img/users.jpg">
+        </div>
+        <div class="col-md-4"></div>
+    </div>
     <div class="row">
         <div class="col-md-12">
             <table class="table">

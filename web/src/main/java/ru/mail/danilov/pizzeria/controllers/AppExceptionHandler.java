@@ -17,14 +17,6 @@ public class AppExceptionHandler {
         this.properties = properties;
     }
 
-    @ExceptionHandler(ItemNotFoundException.class)
-    public String itemNotFoundErrorHandler(HttpServletRequest request, Exception e) {
-        request.setAttribute("message", "Item not found");
-        request.setAttribute("exception", e);
-        request.setAttribute("url", request.getRequestURL());
-        return properties.getErrorPagePath();
-    }
-
     @ExceptionHandler(Exception.class)
     public String defaultErrorHandler(HttpServletRequest request, Exception e) {
         request.setAttribute("exception", e);

@@ -1,9 +1,11 @@
 body {
     background-color: #eae3cb;
     font-family: "/resources/font/LugaAd Bold.ttf", cursive;
+    font-size: larger;
 }
 
 .btn {
+    border-radius: 20px  ;
     background-color: #fde07f;
     border-color: #db7f00;
     border-width: medium;
@@ -11,18 +13,31 @@ body {
     font-weight: bold;
     color: black;
 }
-label{
+.activity{
+    margin-top: 10px;
+    background-color:#eae3cb;
+    border-color: #eae3cb;
+}
+.activity:hover {
+    background-color:#eae3cb;
+    box-shadow: 0 0 0 3px black inset;
+    
+}
+label {
     padding-left: 5%;
 }
-h4{
+
+h4 {
     font-style: italic;
 }
-label{
+
+label {
     font-size: larger;
 }
-.form-control{
+
+.form-control {
     border-radius: 15px;
     border-color: #db7f00;
 
-    padding: 8% ;
+    padding: 8%;
 }

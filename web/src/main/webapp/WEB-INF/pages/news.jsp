@@ -39,7 +39,7 @@
                             <td>${news.created}</td>
                             <td>
                                 <a href="${pageContext.request.contextPath}/news/${news.id}/comments"
-                                   class="btn btn-dark">Show comments</a>
+                                   class="btn btn-dark"><span class="badge badge-light">${news.comments}</span> Show comments</a>
                             </td>
                         </tr>
                     </form>

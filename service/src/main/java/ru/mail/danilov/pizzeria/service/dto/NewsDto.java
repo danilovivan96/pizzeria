@@ -8,6 +8,7 @@ public class NewsDto {
     private String content;
     private LocalDateTime created;
     private String author;
+    private Integer comments;
 
     public Long getId() {
         return id;
@@ -45,7 +46,16 @@ public class NewsDto {
         return author;
     }
 
+    public Integer getComments() {
+        return comments;
+    }
+
+    public void setComments(Integer comments) {
+        this.comments = comments;
+    }
+
     public void setAuthor(String author) {
         this.author = author;
+
     }
 }

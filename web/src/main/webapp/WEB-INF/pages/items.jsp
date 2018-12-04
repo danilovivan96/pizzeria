@@ -9,8 +9,24 @@
 </head>
 
 <body>
-<h1 class="shadow-lg p-3 mb-5 bg-grey rounded bg-dark text-white" align="center">Items</h1>
 <div class="container">
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <a class="btn activity" href="${pageContext.request.contextPath}/items">
+                <img src="${pageContext.request.contextPath}/resources/img/drinks.png">
+            </a>
+        </div>
+        <div class="col-md-4 text-center">
+            <a class="btn activity" href="${pageContext.request.contextPath}/items">
+                <img src="${pageContext.request.contextPath}/resources/img/pizza.png">
+            </a>
+        </div>
+        <div class="col-md-4 text-center">
+            <a class="btn activity" href="${pageContext.request.contextPath}/items">
+                <img  src="${pageContext.request.contextPath}/resources/img/deserts.png">
+            </a>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12">
             <table class="table">
@@ -55,7 +71,7 @@
             <c:if test="${not empty size}">
                 <form action="${pageContext.request.contextPath}orders/bucket" method="get">
                     <button type="submit" class="btn btn-dark">
-                        Bucket <span class="badge badge-light">${size}</span>
+                        Bucket <span class="badge">${size}</span>
                     </button>
                 </form>
             </c:if>

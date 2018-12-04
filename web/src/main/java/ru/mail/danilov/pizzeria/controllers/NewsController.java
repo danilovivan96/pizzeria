@@ -59,15 +59,14 @@ public class NewsController {
     }
 
     @PostMapping("/{id}/comments/add")
-    @PreAuthorize("hasAuthority('CUSTOMER_PERMISSION')")
     public String addComment(@PathVariable("id") Long news,
-                             @RequestAttribute("newComment") CommentDto comment,
+                             @ModelAttribute("newComment") CommentDto comment,
                              BindingResult result,
                              ModelMap modelMap) {
         commentValidator.validate(comment, result);
         if (result.hasErrors()) {
             modelMap.addAttribute("message", "Invalid comment");
-            return properties.getNewsCreatePagePath();
+            return "redirect:/news/" + news + "/comments";
         } else {
             commentService.save(comment, news);
             return "redirect:/news/" + news + "/comments";
@@ -104,8 +103,8 @@ public class NewsController {
         List<CommentDto> comments = newsService.getComments(id);
         modelMap.addAttribute("news", id);
         modelMap.addAttribute("comments", comments);
-        CommentDto comment = new CommentDto();
-        modelMap.addAttribute("newComment", comment);
+        CommentDto newComment = new CommentDto();
+        modelMap.addAttribute("newComment", newComment);
         return properties.getCommentsPagePath();
     }
 }

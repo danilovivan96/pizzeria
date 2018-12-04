@@ -20,7 +20,7 @@ public class CommentValidator implements Validator {
 
         ValidationUtils.rejectIfEmpty(errors, "content", "comment.content.empty");
         CommentDto comment = (CommentDto) object;
-        Pattern contentPattern = Pattern.compile("^[0-9A-Za-z,./?!_-]{0,200}$",
+        Pattern contentPattern = Pattern.compile("^[0-9A-Za-z , . / ? ! _ ' \"\\s]{0,200}$",
                 Pattern.CASE_INSENSITIVE);
         if (!(contentPattern.matcher(comment.getContent()).matches())) {
             errors.rejectValue("content", "comment.content.invalid");

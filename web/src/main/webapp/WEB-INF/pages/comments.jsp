@@ -1,6 +1,7 @@
+<%@page language="java" contentType="text/html; UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,15 +49,35 @@
         </c:if>
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <security:authorize access="hasAuthority('CUSTOMER_PERMISSION')">
-                <form:form action="${pageContext.request.contextPath}/news/${news}/comments/add" modelAttribute="newComment">
-                    <div class="form-group">
-                        <form:label path="content">Add your comment:</form:label>
-                        <form:input path="content" class="form-control"/>
+            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">Add new
+                Comment
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Your comment:</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form:form action="${pageContext.request.contextPath}/news/${id}/comments/add"
+                                   modelAttribute="newComment"
+                                   method="post">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <form:textarea class="form-control" id="Comment" path="content"/>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-dark">Save</button>
+                            </div>
+                        </form:form>
                     </div>
-                    <button type="submit" class="btn btn-dark">Add comment</button>
-                </form:form>
-            </security:authorize>
+                </div>
+            </div>
         </div>
         <div class="col-md-4">
             <a href="${pageContext.request.contextPath}/news" class="btn btn-dark">Back to news</a>

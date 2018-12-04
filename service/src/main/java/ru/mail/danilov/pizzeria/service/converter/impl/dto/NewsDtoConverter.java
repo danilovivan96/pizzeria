@@ -7,6 +7,7 @@ import ru.mail.danilov.pizzeria.service.dto.NewsDto;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Component("newsDtoConverter")
 public class NewsDtoConverter implements ConverterDto<NewsDto, News> {
@@ -18,6 +19,7 @@ public class NewsDtoConverter implements ConverterDto<NewsDto, News> {
         newsDto.setContent(news.getContent());
         newsDto.setCreated(news.getCreated());
         newsDto.setAuthor(news.getUser().getName() + " " + news.getUser().getSurname());
+        newsDto.setComments(news.getComments().size());
         return newsDto;
     }
 
@@ -31,6 +33,7 @@ public class NewsDtoConverter implements ConverterDto<NewsDto, News> {
             newsDto.setContent(news.getContent());
             newsDto.setCreated(news.getCreated());
             newsDto.setAuthor(news.getUser().getName() + " " + news.getUser().getSurname());
+            newsDto.setComments(news.getComments().size());
             dtoList.add(newsDto);
         }
         return dtoList;

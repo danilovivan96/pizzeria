@@ -13,8 +13,8 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <img class="img-fluid"
+        <div class="col-md-4 ">
+            <img class="img-fluid "
                  src="${pageContext.request.contextPath}/resources/img/pizza-maker-52557_640.jpg">
             <form:form action="${pageContext.request.contextPath}/register" method="post" modelAttribute="user">
                 <div class="form-group">

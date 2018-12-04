@@ -84,10 +84,13 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public String save(Long id) {
         User user = userDao.findOne(userUtil.getUserPrincipal().getId());
+        Order order = orderDao.findOne(id);
+        if (order.getItems().isEmpty()) {
+            return "redirect:/bucket";
+        }
         if (user.getProfile() == null) {
             return "redirect:/profiles/add";
         } else {
-            Order order = orderDao.findOne(id);
             order.setStatus(OrderStatusEnum.NEW.name());
             return "redirect:/orders";
         }
@@ -138,6 +141,12 @@ public class OrderServiceImpl implements OrderService {
             orderDao.create(bucket);
         }
         Item item = itemDao.findOne(positionDto.getItemId());
+        for (OrderPosition orderPosition : bucket.getItems()) {
+            if (orderPosition.getItem().equals(item)) {
+                orderPosition.setQuantity(orderPosition.getQuantity() + positionDto.getQuantity());
+                return orderPosition.getQuantity();
+            }
+        }
         BigDecimal cost = bucket.getCost();
         cost = cost.add((item.getPrice().multiply(BigDecimal.valueOf(positionDto.getQuantity()))));
         bucket.setCost(cost);
