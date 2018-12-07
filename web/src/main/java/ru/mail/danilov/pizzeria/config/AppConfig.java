@@ -6,7 +6,9 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
-@PropertySource({"classpath:database.properties", "classpath:pagepathes.properties"})
+@PropertySource({
+        "classpath:database.properties",
+        "classpath:pagepathes.properties",})
 @ComponentScan(basePackages = {
         "ru.mail.danilov.pizzeria.config",
         "ru.mail.danilov.pizzeria.dao",

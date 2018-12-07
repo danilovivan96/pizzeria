@@ -16,13 +16,15 @@
             <form:form action="${pageContext.request.contextPath}/news/create" modelAttribute="news" method="post">
                 <div class="form-group">
                     <form:label path="tittle">Tittle:</form:label>
+                    <form:errors path="tittle" cssClass="error"/>
                     <form:input path="tittle" class="form-control" placeholder="Tittle:"/>
                 </div>
                 <div class="form-group">
                     <form:label path="content">Content:</form:label>
+                    <form:errors path="content" cssClass="error"/>
                     <form:input path="content" class="form-control" placeholder="Content:"/>
                 </div>
-                <button type="submit" class="btn btn-dark">Create News</button>
+                <button type="submit" class="btn btn-lg btn-block btn-success">Create News</button>
             </form:form>
         </div>
         <div class="col-md-4"></div>

@@ -42,6 +42,11 @@
                     <c:out value="${message}"/>
                 </div>
             </c:if>
+            <c:if test="${not empty param.error}">
+                <div class="alert alert-danger" role="alert" align="center">
+                    Incorrect login or password
+                </div>
+            </c:if>
             <form action="${pageContext.request.contextPath}/login" methodParam="user" method="post">
                 <div class="form-group">
                     <label for="Login">Login:</label>
@@ -54,7 +59,7 @@
                            placeholder="Enter Password">
                 </div>
                 <div class="form-group pt-3">
-                    <button type="submit" class="btn btn-lg btn-success btn-block  ">Log in</button>
+                    <button type="submit" class="btn btn-lg btn-success btn-block ">Log in</button>
                 </div>
             </form>
         </div>

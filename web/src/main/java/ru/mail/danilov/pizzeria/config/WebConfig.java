@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
@@ -36,10 +35,9 @@ public class WebConfig implements WebMvcConfigurer {
     @Bean
     public MessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-        messageSource.setBasename("messages.properties");
-        messageSource.setUseCodeAsDefaultMessage(true);
+        messageSource.setBasenames("classpath:messages");
         messageSource.setDefaultEncoding("UTF-8");
-        messageSource.setCacheSeconds(0);
+
         return messageSource;
     }
 

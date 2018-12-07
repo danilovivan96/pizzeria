@@ -23,7 +23,7 @@
         </div>
         <div class="col-md-4 text-center">
             <a class="btn activity" href="${pageContext.request.contextPath}/items">
-                <img  src="${pageContext.request.contextPath}/resources/img/deserts.png">
+                <img src="${pageContext.request.contextPath}/resources/img/deserts.png">
             </a>
         </div>
     </div>
@@ -71,22 +71,24 @@
             <c:if test="${not empty size}">
                 <form action="${pageContext.request.contextPath}orders/bucket" method="get">
                     <button type="submit" class="btn btn-dark">
-                        Bucket <span class="badge">${size}</span>
+                        Bucket <span class="badge"> &#128722 ${size}</span>
                     </button>
                 </form>
             </c:if>
         </div>
         <div class="col-md-4">
-            <nav aria-label="Navigation">
-                <ul class="pagination">
-                    <c:forEach var="page" begin="1" end="${pages}">
-                        <li class="page-item">
-                            <a class="page-link"
-                               href="${pageContext.request.contextPath}/items?page=${page}" }>${page}</a>
-                        </li>
-                    </c:forEach>
-                </ul>
-            </nav>
+            <c:if test="${pages}>1">
+                <nav aria-label="Navigation">
+                    <ul class="pagination">
+                        <c:forEach var="page" begin="1" end="${pages}">
+                            <li class="page-item">
+                                <a class="page-link"
+                                   href="${pageContext.request.contextPath}/items?page=${page}" }>${page}</a>
+                            </li>
+                        </c:forEach>
+                    </ul>
+                </nav>
+            </c:if>
         </div>
         <div class="col-md-4">
             <a href="${pageContext.request.contextPath}/orders" class="btn btn-dark">Show Orders</a>

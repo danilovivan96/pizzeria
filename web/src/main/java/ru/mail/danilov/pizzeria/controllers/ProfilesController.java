@@ -42,7 +42,7 @@ public class ProfilesController {
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('CHANGE_PROFILE')")
     public String save(
-            @ModelAttribute ProfileDto profile,
+            @ModelAttribute("profile") ProfileDto profile,
             BindingResult result,
             ModelMap modelMap) {
         profileValidator.validate(profile, result);

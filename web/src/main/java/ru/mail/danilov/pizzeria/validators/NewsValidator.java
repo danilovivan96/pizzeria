@@ -20,14 +20,14 @@ public class NewsValidator implements Validator {
         ValidationUtils.rejectIfEmpty(errors, "tittle", "news.tittle.empty");
         ValidationUtils.rejectIfEmpty(errors, "content", "news.content.empty");
         NewsDto news = (NewsDto) object;
-        Pattern tittlePattern = Pattern.compile("^[0-9A-Za-z,./?!_-]{0,50}$",
+        Pattern tittlePattern = Pattern.compile("^[0-9A-Za-z,./?!'\",_=+*-/%#№:()\\s]{1,50}$",
                 Pattern.CASE_INSENSITIVE);
         Pattern contentPattern = Pattern.compile("^[0-9A-Za-z,./?!_-]{0,255}$",
                 Pattern.CASE_INSENSITIVE);
         if (!(tittlePattern.matcher(news.getTittle()).matches())) {
-            errors.rejectValue("news", "item.tittle.invalid");
+            errors.rejectValue("news", "news.tittle.invalid");
         } else if (!(contentPattern.matcher(news.getContent()).matches())) {
-            errors.rejectValue("news", "item.content.invalid");
+            errors.rejectValue("news", "news.content.invalid");
         }
     }
 }

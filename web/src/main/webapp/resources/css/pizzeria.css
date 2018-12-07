@@ -5,7 +5,7 @@ body {
 }
 
 .btn {
-    border-radius: 20px  ;
+    border-radius: 20px;
     background-color: #fde07f;
     border-color: #db7f00;
     border-width: medium;
@@ -13,16 +13,19 @@ body {
     font-weight: bold;
     color: black;
 }
-.activity{
+
+.activity {
     margin-top: 10px;
-    background-color:#eae3cb;
+    background-color: #eae3cb;
     border-color: #eae3cb;
 }
+
 .activity:hover {
-    background-color:#eae3cb;
+    background-color: #eae3cb;
     box-shadow: 0 0 0 3px black inset;
-    
+
 }
+
 label {
     padding-left: 5%;
 }
@@ -35,9 +38,26 @@ label {
     font-size: larger;
 }
 
+.page-link {
+    border-color: #db7f00;
+    border-width: medium;
+    color: black;
+    background-color: #fde07f;
+}
+.page-link:hover {
+    border-color: darkgreen;
+    border-width: medium;
+    background-color: green;
+    color: white;
+
+}
+
 .form-control {
     border-radius: 15px;
     border-color: #db7f00;
-
     padding: 8%;
+}
+.error{
+    color: #D8000C;
+    background-color: #FFD2D2;
 }

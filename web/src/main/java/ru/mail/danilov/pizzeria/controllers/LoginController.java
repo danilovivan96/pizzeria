@@ -2,7 +2,6 @@ package ru.mail.danilov.pizzeria.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -44,9 +43,9 @@ public class LoginController {
         return properties.getRegistrationPagePath();
     }
 
-    @PostMapping("/register")
+    @PostMapping("/registration")
     public String register(
-            @ModelAttribute UserDto user,
+            @ModelAttribute("user") UserDto user,
             BindingResult result,
             ModelMap modelMap) {
         userValidator.validate(user, result);

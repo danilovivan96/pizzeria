@@ -38,12 +38,17 @@
     </div>
     <div class="row">
         <div class="col-md-4">
-            <h5>Total cost: ${order.cost}</h5>
-            <h5>Created: ${order.created}</h5>
-            <h5>Status: ${order.status}</h5>
+
         </div>
         <div class="col-md-4">
-            <a href="${pageContext.request.contextPath}/items" class="btn btn-dark">Make new order</a>
+            <security:authorize access="hasAuthority('CUSTOMER_PERMISSION')">
+                <a href="${pageContext.request.contextPath}/items" class="btn btn-dark">Make new order</a>
+            </security:authorize>
+            <security:authorize access="hasAuthority('SALE_USER_PERMISSION')">
+                <h5>Total cost: ${order.cost}</h5>
+                <h5>Created: ${order.created}</h5>
+                <h5>Status: ${order.status}</h5>
+            </security:authorize>
         </div>
         <div class="col-md-4">
             <a href="${pageContext.request.contextPath}/orders" class="btn btn-dark">Back to order list</a>

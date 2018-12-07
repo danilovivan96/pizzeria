@@ -23,10 +23,12 @@
             <form:form action="${pageContext.request.contextPath}/profiles/save" modelAttribute="profile" method="post">
                 <div class="form-group">
                     <form:label path="address">Address:</form:label>
+                    <form:errors path="address" cssClass="error"/>
                     <form:input path="address" class="form-control" placeholder="1, 110 Hezavisimosti, Minsk"/>
                 </div>
                 <div class="form-group">
                     <form:label path="telephone">Telephone:</form:label>
+                    <form:errors path="telephone" cssClass="error"/>
                     <form:input path="telephone" class="form-control" placeholder="+375*********"/>
                 </div>
                 <button type="submit" class="btn btn-dark">Save profile</button>
